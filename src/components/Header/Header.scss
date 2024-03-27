@@ -1,0 +1,86 @@
+$gray-cart:  hsl(202, 24%, 27%);
+$gray-color: hsl(202, 24%, 27%);
+$gray-light: hsl(216, 22%, 76%);
+$gray-search: hsl(0, 0%, 85%);
+$white-color: hsl(0, 0%, 100%);
+
+.header {
+    display: flex;
+    padding: 20px 5%;
+    justify-content: space-between;
+}
+
+.logo {
+    align-items: center;
+    color: $gray-color;
+    display: flex;
+    gap: 10px;
+}
+
+.icon {
+    color: $gray-color;
+    font-size: 1.6rem;
+}
+
+h2{
+    color: $gray-color;
+}
+
+.right-side {
+    align-items: center;
+    display: flex;
+    gap: 30px;
+}
+
+.search-input {
+    align-items: center;
+    border: 2px solid $gray-search;
+    border-radius:  10px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-input input {
+    background: transparent;
+    padding: 5px;
+}
+
+.search-input input::placeholder {
+    color: $gray-color;
+    font-weight: 500;
+}
+
+.seacrh-input .icon {
+    font-size: 1.3rem;
+}
+
+// cart icon
+
+.cart {
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.cart-icon {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: $gray-cart;
+}
+
+.cart span {
+    align-items: center;
+    color: $white-color;
+    background: $gray-light;
+    border-radius: 50%;
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    height: 10px;
+    padding: 3px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    justify-content: center;
+    width: 10px;
+}
