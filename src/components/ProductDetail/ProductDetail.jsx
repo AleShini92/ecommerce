@@ -6,7 +6,7 @@ const ProductDetail = () => {
         <div className="">
             Product-detail
         </div>
-    )
-}
+    );
+};
 
 export default ProductDetail

@@ -5,7 +5,7 @@ const Cart = () => {
         <div className="cart-page">
             <CartContainer />
         </div>
-    )
-}
+    );
+};
 
 export default Cart
