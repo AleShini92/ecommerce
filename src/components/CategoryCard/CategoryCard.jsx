@@ -1,9 +1,9 @@
-import React from 'react';
+import "./CategoryCard.scss";
 
 const CategoryCard = () => {
     return (
-        <div>
-            CategoryCard
+        <div className="category-card">
+            <h4 className="category-name">This is a Category</h4>
         </div>
     )
 }

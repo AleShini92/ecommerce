@@ -1,10 +1,5 @@
 @use '../../style/color-map' as c;
-
-@mixin flex($center:center) {
-    display: flex;
-    align-items: center;
-    justify-content: $center;
-}
+@use "../../style/display-map" as d;
 
 .card-container {
     background: c.$white-color;
@@ -15,7 +10,7 @@
 }
 
 .card-image {
-    @include flex;
+    @include d.flex;
     height: 300px;
     width: 100%;
 
@@ -45,10 +40,10 @@
 }
 
 .card-flex {
-    @include flex($center: space-between);
+    @include d.flex($center: space-between);
 
     .card-button {
-        @include flex;
+        @include d.flex;
         background: c.$white-color;
         border-radius: 50%;
         cursor: pointer;

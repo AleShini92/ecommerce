@@ -7,6 +7,9 @@ const CategoryList = () => {
     return (
         <div className='category-list'>
             <CategoryCard />
+            <CategoryCard />
+            <CategoryCard />
+            <CategoryCard />
         </div>
     )
 }

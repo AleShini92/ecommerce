@@ -1,0 +1,16 @@
+@use "../../style/color-map" as c;
+@use "../../style/display-map" as d;
+
+.category-card {
+    cursor: pointer;
+    border: 1px solid c.$gray-medium;
+    border-radius: 30px;
+    padding: 1rem;
+    width: 200px;
+
+    h4.category-name {
+        @include d.flex;
+        color: c.$gray-medium;
+        text-transform: uppercase;
+    }
+}
