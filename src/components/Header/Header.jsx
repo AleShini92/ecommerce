@@ -15,11 +15,12 @@ const Header = () => {
                 <div className="search-input">
                     <input type="text" placeholder="search" /> <TbSearch />
                 </div>
-
-                <div className="cart">
-                    <TbShoppingCart className="cart-icon" />
-                    <span>0</span>
-                </div>
+                <Link to="/cart">
+                    <div className="cart">
+                        <TbShoppingCart className="cart-icon" />
+                        <span>0</span>
+                    </div>
+                </Link>
             </div>
         </div>
     );

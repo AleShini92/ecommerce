@@ -1,0 +1,81 @@
+@use "../../style/color-map" as c;
+@use "../../style/display-map" as d;
+
+
+.cart-wrapper {
+    background: c.$white-color;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid c.$gray-light;
+}
+
+.cart-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    .cart-items {
+        display: flex;
+        flex: 1;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    //summary container
+
+    .summary {
+        background: c.$gray-light;
+        padding: 10px;
+        width: 250px;
+    }
+}
+
+.item-detail {
+    @include d.flex($center:space-between);
+    border: 1px solid c.$gray-medium;
+    border-radius: 10px;
+    padding: 10px 20px;
+
+    .item-info {
+        align-items: center;
+        display: flex;
+        gap: 20px;
+
+        .item-title {
+            width: 300px;
+        }
+
+        .item-image {
+            align-items: center;
+            display: flex;
+            height: 80px;
+            width: 70px;
+
+            &img {
+                width: 50px;
+            }
+        }
+    }
+
+    .item-quantity {
+        align-items: center;
+        display: flex;
+        gap: 10px;
+    }
+
+    .item-remove {
+        color: red;
+    }
+
+    :is(.item-remove, .item-quantity) {
+        cursor: pointer;
+    }
+}
+
+// if card is empty 
+
+.no-item {
+    @include d.flex;
+    height: 300px;
+    font: 1;
+}
