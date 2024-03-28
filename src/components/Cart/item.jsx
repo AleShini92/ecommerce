@@ -19,7 +19,7 @@ const Item = () => {
 
             <div className="item-remove"><TbX /></div>
         </div>
-    )
+    );
 }
 
 export default Item

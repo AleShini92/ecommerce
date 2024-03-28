@@ -4,14 +4,14 @@
 
 .cart-wrapper {
     background: c.$white-color;
-    padding: 2rem;
-    border-radius: 10px;
     border: 1px solid c.$gray-light;
+    border-radius: 10px;
+    padding: 2rem;
 }
 
 .cart-container {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 20px;
 
     .cart-items {
@@ -23,10 +23,43 @@
 
     //summary container
 
-    .summary {
+    .cart-summary {
         background: c.$gray-light;
-        padding: 10px;
+        border-radius: 4px;
+        padding: 30px;
         width: 250px;
+
+        .summary-title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .summary-total-amount {
+            margin-top: 4rem;
+        }
+
+        .check-out-btn {
+            background: c.$white-color;
+            border-radius: 4px;
+            color: c.$gray-color;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: 500;
+            padding: 10px 20px;
+            text-transform: uppercase;
+        }
+    }
+
+    :is(.summary-total, .summary-total-tax, .summary-total-quantity, .summary-total-amount) {
+        @include d.flex($center:space-between);
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 10px;
+        text-transform: uppercase;
+
+        span {
+            color: c.$white-color;
+        }
     }
 }
 
