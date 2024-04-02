@@ -1,0 +1,66 @@
+@use "../../style/color-map" as c;
+@use "../../style/display-map" as d;
+
+.skeleton-container {
+    background: c.$gray-high_light;
+    border: 1px solid c.$gray-high_light;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 240px;
+
+    @keyframes overlay-wave {
+        0% {
+            transform: translate(-100%);
+        }
+        100% {
+            transform: translate(100%);
+        }
+    }
+
+    .skeleton-image {
+        background: c.$gray-light;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:  linear-gradient(90deg,
+            hsla(0, 0%, 100%, 0),
+            hsla(0, 0%, 100%, 1),
+            hsla(0, 0%, 100%, 0)
+        );
+        animation: overlay-wave 2s linear infinite;
+    }
+
+    .skeleton-detail {
+        flex: 1;
+        padding: 10px 5px;
+    }
+
+    .skeleton-category {
+        background: c.$gray-light;
+        height: 16px;
+        margin-bottom: 10px;
+        width: 60%;
+    }
+
+    .skeleton-flex {
+        @include d.flex($center:space-between);
+
+        .skeleton-price {
+            background: c.$gray-light;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+        }
+    }
+}

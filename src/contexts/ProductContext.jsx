@@ -17,7 +17,8 @@ export const ProductProvider = ({ children }) => {
             let url = "https://fakestoreapi.com/products";
             if (category) {
                 url += `/category/${category}/?limit=4`;
-            } else {
+            } 
+            else {
                 url += "?limit=4";
             }
             const res = await fetch(url);
