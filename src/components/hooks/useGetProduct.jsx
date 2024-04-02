@@ -9,12 +9,13 @@ const useGetProduct = () => {
     console.log(product);
     const getProduct = async (id) => {
         try {
-            const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-            if(res.ok) {
-                const data = await res.json();
-                setProduct(data);
-                setloading(false);
-            }
+          setloading(true);
+          const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+          if(res.ok) {
+            const data = await res.json();
+            setProduct(data);
+            setloading(false);
+          }
         } catch(error) {
             console.error(error);
         }

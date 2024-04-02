@@ -49,6 +49,7 @@
 
         .item-title {
             width: 300px;
+            text-wrap: balance;
         }
 
         .item-image {
@@ -57,7 +58,7 @@
             height: 80px;
             width: 70px;
 
-            &img {
+            img {
                 width: 50px;
             }
         }

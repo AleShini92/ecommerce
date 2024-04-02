@@ -1,5 +1,6 @@
 import React from 'react';
 import { TbPlus } from 'react-icons/tb';
+import { motion } from "framer-motion";
 
 import "./ProductCard.scss";
 import { useCart } from '../../contexts/CartContext';
@@ -12,7 +13,11 @@ const ProductCard = ({ product }) => {
         addToCart(product)
     }
     return (
-        <div className="card-container">
+        <motion.div className="card-container" 
+            initial={{ opacity: 0, y:100 }}
+            animate={{ opacity: 1, y:0 }}
+            transition= {{ duration: 1.5 }} // 1s
+        >
             <div className="card-image">
                 <img src={product.image} alt="product image" />
             </div>
@@ -29,7 +34,7 @@ const ProductCard = ({ product }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

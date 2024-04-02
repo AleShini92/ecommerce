@@ -35,8 +35,9 @@ body {
 
 .main-content {
   display: flex;
-  justify-content: space-between;
   padding: 4rem 2%;
+  overflow: hidden;
+  justify-content: space-between;
 }
 
 .section-title {

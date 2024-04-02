@@ -1,0 +1,103 @@
+@use "../../style/color-map" as c;
+@use "../../style/display-map" as d;
+
+
+.product-container {
+    border: 1px solid c.$gray-high_light;
+    border-radius: 10px;
+    display: flex;
+}
+
+.product-image {
+    @include d.flex;
+    background: c.$white-color;
+    flex: 1;
+}
+
+.product-image img {
+    width: 300px;
+    padding: 2rem;
+}
+
+.product-detail {
+    background: c.$gray-light-medium;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 5rem 4rem;
+}
+
+.product-category {
+    color: c.$gray-color;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.product-title {
+    text-wrap: balance;
+}
+
+.product-rating {
+    @include d.flex($center:start);
+    gap: 10px;
+
+    .product-rating-start {
+        color: blueviolet;
+    }
+}
+
+.product-rating span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.product-description {
+    font-size: 14px;
+    text-align: justify;
+}
+
+.product-price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.product-buttons {
+    @include d.flex($center: start);
+    gap: 20px;
+}
+
+.product-btn {
+    background: c.$white-color;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px 2 rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 2rem;
+}
+
+.buy-btn {
+    background: black;
+    color: c.$white-color;
+}
+
+// Loading skeleton
+
+.product-image-skeleton {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 2rem;
+    background: c.$gray-high_light;
+}
+
+.product-detail-skeeton {
+    @include d.flex;
+    gap: 2rem;
+}
