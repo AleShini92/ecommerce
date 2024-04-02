@@ -17,7 +17,7 @@ const Item = ({ item, handleRemove, handleAdd, handleRemoveQuantity }) => {
                     { item.quantity }
                 <TbPlus className="plus" onClick={() => handleAdd(item)} />
             </div>
-            <div className="item-total-price">{ item.price }</div>
+            <div className="item-total-price">{ item.price * item.quantity }</div>
 
             <div className="item-remove" onClick={() => handleRemove(item.id)}>
                 <TbX />
