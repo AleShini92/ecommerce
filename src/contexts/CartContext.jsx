@@ -7,6 +7,8 @@ export const CartProvider = ( {children} ) => {
         JSON.parse(localStorage.getItem("cartItems")) || [] 
     );
 
+    console.log(cartItems);
+
     // add item to cart
     const addToCart = (product) => {
         const  existingItemIndex = cartItems.findIndex(
@@ -25,7 +27,7 @@ export const CartProvider = ( {children} ) => {
 
     //remove item from card
 
-    const removeFromCard = () => {
+    const removeFromCart = (productId) => {
         setcartItem(cartItems.filter((item) => item.id !== productId));
     };
 
@@ -34,10 +36,10 @@ export const CartProvider = ( {children} ) => {
     }, [cartItems]);
 
     return (
-        <CartContext.Provider value={{cartItems, addToCart,removeFromCard }}>
+        <CartContext.Provider value={{cartItems, addToCart, removeFromCart }}>
             { children }
         </CartContext.Provider>
     )
 }
 
-const useCart= () => useContext(CartContext)
+export const useCart = () => useContext(CartContext);
