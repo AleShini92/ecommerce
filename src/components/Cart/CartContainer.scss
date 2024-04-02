@@ -9,7 +9,7 @@
     border-radius: 10px;
     display: flex;
     padding: 2rem;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .cart-container {
@@ -39,6 +39,7 @@
     @include d.flex($center:space-between);
     border: 1px solid c.$gray-medium;
     border-radius: 10px;
+    gap: 20px;
     padding: 10px 20px;
 
     .item-info {
@@ -72,7 +73,7 @@
         color: red;
     }
 
-    :is(.item-remove, .item-quantity) {
+    :is(.item-remove, svg.minus, svg.plus) {
         cursor: pointer;
     }
 }

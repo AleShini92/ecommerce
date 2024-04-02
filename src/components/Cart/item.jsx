@@ -2,7 +2,7 @@ import React from "react";
 import { TbMinus, TbPlus, TbX } from "react-icons/tb";
 import "./CartContainer.scss";
 
-const Item = ({ item, handleRemove, handleAdd }) => {
+const Item = ({ item, handleRemove, handleAdd, handleRemoveQuantity }) => {
     return (
         <div className="item-detail">
             <div className="item-info">
@@ -13,11 +13,15 @@ const Item = ({ item, handleRemove, handleAdd }) => {
             </div>
             <div className="item-unit-price">{ item.price }</div>
             <div className="item-quantity">
-                <TbMinus /> { item.quantity } <TbPlus onClick={() => {item}} />
+                <TbMinus className="minus" onClick={() => handleRemoveQuantity(item.id)}/> 
+                    { item.quantity }
+                <TbPlus className="plus" onClick={() => handleAdd(item)} />
             </div>
             <div className="item-total-price">{ item.price }</div>
 
-            <div className="item-remove" onClick={() => handleRemove(item.id)}><TbX /></div>
+            <div className="item-remove" onClick={() => handleRemove(item.id)}>
+                <TbX />
+            </div>
         </div>
     );
 }

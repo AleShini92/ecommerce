@@ -5,11 +5,11 @@ import Summary from "./Summary";
 import { useCart } from "../../contexts/CartContext";
 
 const CartContainer = () => {
-    const { cartItems, removeFromCart, addToCart } = useCart();
+    const { cartItems, removeFromCart, addToCart, removeQuantity } = useCart();
 
     // add item
     const handleAdd = (product) => {
-        addToCart(product)
+        addToCart(product);
     }
 
     //remove item
@@ -17,6 +17,13 @@ const CartContainer = () => {
         
         removeFromCart(productId);
     };
+
+    //remove quantity
+
+    const handleRemoveQuantity = (productId) => {
+        removeQuantity(productId);
+    }
+
     return (
         <div className="cart-wrapper">
             <div className="cart-container">
@@ -25,7 +32,12 @@ const CartContainer = () => {
                     cartItems && cartItems.length > 0 ? <>
                     <div className="cart-items">
                         {cartItems.map((item) => (
-                            <Item key={item.id} item={item} handleRemove={handleRemove} handleAdd={handleAdd}/>
+                            <Item 
+                            key={item.id} 
+                            item={item} handleRemove={handleRemove} 
+                            handleAdd={handleAdd}
+                            handleRemoveQuantity={handleRemoveQuantity}
+                            />
                         ))}
                         </div>
                     </> :
@@ -34,7 +46,7 @@ const CartContainer = () => {
                     </div>
                 }
                 </div>
-                <Summary />
+                <Summary cartItems={cartItems}/>
         </div>
     );
 }

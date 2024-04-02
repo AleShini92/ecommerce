@@ -31,12 +31,29 @@ export const CartProvider = ( {children} ) => {
         setcartItem(cartItems.filter((item) => item.id !== productId));
     };
 
+    // remove quantity 
+    const removeQuantity = (productId) => {
+        const  existingItemIndex = cartItems.findIndex(
+            (item) => item.id === productId
+        );
+
+        if (existingItemIndex !== -1) {
+            const updateItems = [...cartItems];
+            updateItems[existingItemIndex].quantity -= 1;
+            if(updateItems[existingItemIndex].quantity === 0) {
+                removeFromCart(productId)
+            } else {
+                setcartItem(updateItems);
+            }
+        };
+    };
+
     useEffect(() => {
         localStorage.setItem("cartItem", JSON.stringify(cartItems));
     }, [cartItems]);
 
     return (
-        <CartContext.Provider value={{cartItems, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{cartItems, addToCart, removeFromCart, removeQuantity }}>
             { children }
         </CartContext.Provider>
     )
