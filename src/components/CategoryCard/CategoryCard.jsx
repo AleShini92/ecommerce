@@ -1,9 +1,9 @@
 import "./CategoryCard.scss";
 
-const CategoryCard = () => {
+const CategoryCard = (category) => {
     return (
         <div className="category-card">
-            <h4 className="category-name">This is a Category</h4>
+            <h4 className="category-name">category</h4>
         </div>
     )
 }
