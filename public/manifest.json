@@ -1,0 +1,26 @@
+{
+  "short_name": "ecommerce",
+  "name": "website ecommerce",
+  "icons": [
+    {
+      "src": "vite.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "vite.png",
+      "type": "image/png",
+      "sizes": "133x134"
+    },
+    {
+      "src": "icon-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
+  
